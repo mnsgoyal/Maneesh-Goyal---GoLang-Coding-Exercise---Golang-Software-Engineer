@@ -30,7 +30,6 @@ func main() {
 	fmt.Println("Tree value using PostOrder Traversal")
 	tree.PostOrder()
 
-	// binarytree.Print(os.Stdout, tree.Root, 0, 'M')
 	fmt.Println("Binary Tree Assignment------------END")
 
 	fmt.Println("House Robber------------START")

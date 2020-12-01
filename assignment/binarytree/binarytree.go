@@ -2,7 +2,6 @@ package binarytree
 
 import (
 	"fmt"
-	"io"
 )
 
 type Branch struct {
@@ -19,8 +18,6 @@ func CreateBinaryTree(treeValue []int64, tree *Tree) {
 	for _, objTreevalue := range treeValue {
 		tree.insert(objTreevalue)
 	}
-
-	// print(os.Stdout, tree.Root, 0, 'M')
 }
 
 func (objTree *Tree) insert(data int64) *Tree {
@@ -48,19 +45,6 @@ func (objBranch *Branch) Insert(data int64) {
 			objBranch.right.Insert(data)
 		}
 	}
-}
-
-func Print(w io.Writer, node *Branch, ns int, ch rune) {
-	if node == nil {
-		return
-	}
-
-	for i := 0; i < ns; i++ {
-		fmt.Fprint(w, " ")
-	}
-	fmt.Fprintf(w, "%c:%v\n", ch, node.data)
-	Print(w, node.left, ns+2, 'L')
-	Print(w, node.right, ns+2, 'R')
 }
 
 //------for in order
